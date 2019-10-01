@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="1" name="pytest" skips="0" tests="16" time="1.470"><testcase classname="src.tests.test_bead.TestBead" file="src/tests/test_bead.py" line="5" name="test_init" time="0.00273442268372"></testcase><testcase classname="src.tests.test_bead.TestBead" file="src/tests/test_bead.py" line="14" name="test_get_modification" time="0.00425505638123"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="16" name="test_init" time="0.0268502235413"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="37" name="test_add" time="0.00315690040588"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="51" name="test_record" time="0.00334143638611"><system-out>Recording pose (x,y,z,r,p,y):  0.0 0.0 0.0 0.0 -0.0 0.0
+</system-out></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="67" name="test_set_selected_point" time="0.00294899940491"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="79" name="test_edit" time="0.00587177276611"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="92" name="test_set_goto" time="0.00141525268555"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="95" name="test_set_safe_goto" time="0.00237894058228"></testcase><testcase classname="src.tests.test_calibration.TestCalibration" file="src/tests/test_calibration.py" line="98" name="test_set_save" time="0.002760887146"></testcase><testcase classname="src.tests.test_point.TestPoint" file="src/tests/test_point.py" line="4" name="test_init" time="0.00178623199463"></testcase><testcase classname="src.tests.test_point.TestPoint" file="src/tests/test_point.py" line="9" name="test_operators" time="0.00374269485474"></testcase><testcase classname="src.tests.test_tasks.TestTasks" file="src/tests/test_tasks.py" line="24" name="test_pause" time="0.00458073616028"><system-out>Creating default plan...
+</system-out></testcase><testcase classname="src.tests.test_tasks.TestTasks" file="src/tests/test_tasks.py" line="34" name="test_input" time="0.00665521621704"><system-out>Creating default plan...
+(&apos;Setup bead: &apos;, {&apos;y&apos;: 1, &apos;z&apos;: 1, &apos;angle&apos;: 1})
+</system-out></testcase><testcase classname="src.tests.test_tasks.TestTasks" file="src/tests/test_tasks.py" line="73" name="test_play" time="0.00462293624878"><failure message="TypeError: argument of type &apos;NoneType&apos; is not iterable">self = &lt;src.tests.test_tasks.TestTasks object at 0x7fdf7053edd0&gt;
+
+    def test_play(self):
+        plan = Project.default_plan()
+    
+        with patch.object(RosProxy, &apos;call_service&apos;, return_value=None), \
+             patch.object(MoveTask, &apos;get_robot_path&apos;, return_value=[]), \
+             patch.object(MoveTask, &apos;play&apos;, return_value=None) as mock_play:
+    
+&gt;           plan.play()
+
+src/tests/test_tasks.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src/rosweld/tasks/container.py:31: in play
+    self.current_task.play(data)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;src.rosweld.tasks.weld.WeldTask object at 0x7fdf7053ef50&gt;, data = None
+
+    def play(self, data = None):
+        &quot;&quot;&quot;Weld task play
+    
+            Before starting the movement the weld task will set the wps job number and start the arc
+    
+            &quot;&quot;&quot;
+    
+&gt;       if &quot;type&quot; in data and data[&quot;type&quot;] ==  &quot;weld&quot;:
+E       TypeError: argument of type &apos;NoneType&apos; is not iterable
+
+src/rosweld/tasks/weld.py:82: TypeError</failure><system-out>Creating default plan...
+</system-out></testcase><testcase classname="src.tests.test_transformation.TestTransformation" file="src/tests/test_transformation.py" line="17" name="test_get_transformation_matrix" time="0.0335121154785"></testcase></testsuite>

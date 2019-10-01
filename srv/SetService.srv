@@ -1,0 +1,5 @@
+# Send a custom command
+string command
+string json
+---
+bool success

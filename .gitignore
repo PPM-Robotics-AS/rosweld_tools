@@ -1,0 +1,8 @@
+*.pyc
+__pycache__
+src/rosweld/___temp.cs
+project.rws
+project.rws
+pylint.log
+calibration.rws
+doc/*

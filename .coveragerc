@@ -1,0 +1,21 @@
+[run]
+omit = 
+    src/tests/*
+    *__init__.py
+    #exclude files from MS2
+    src/rosweld/tasks/wait.py
+    src/rosweld/tasks/notify.py
+    src/rosweld/tasks/forcyclecontainer.py
+    src/rosweld/autoplanner.py
+    src/rosweld/crosssection.py
+    src/rosweld/crosssectionmanager.py
+    src/rosweld/history.py
+    src/rosweld/segment.py
+    src/rosweld/signals.py
+    src/app.py
+    src/webserver.py
+    src/rosweld/settings/torch.py
+    src/rosweld/settings/groove.py
+
+    #exclude proxy class
+    src/rosweld/rosproxy.py
